@@ -8,10 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		9DDBA06A1FCB645800BA7B09 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBA0691FCB645700BA7B09 /* cameraIcon.png */; };
+		9DDBA06C1FCB677400BA7B09 /* soundButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBA06B1FCB677300BA7B09 /* soundButton.png */; };
+		9DDBA0701FCB79F200BA7B09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBA06F1FCB79F200BA7B09 /* LaunchScreen.storyboard */; };
+		9DDBA0711FCB79F200BA7B09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBA06F1FCB79F200BA7B09 /* LaunchScreen.storyboard */; };
+		9DDBA0721FCB79F200BA7B09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBA06F1FCB79F200BA7B09 /* LaunchScreen.storyboard */; };
+		9DDBA0741FCB7A8F00BA7B09 /* splashImageText.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBA0731FCB7A8F00BA7B09 /* splashImageText.png */; };
+		9DDBA0751FCB7A8F00BA7B09 /* splashImageText.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBA0731FCB7A8F00BA7B09 /* splashImageText.png */; };
+		9DDBA0761FCB7A8F00BA7B09 /* splashImageText.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBA0731FCB7A8F00BA7B09 /* splashImageText.png */; };
 		9DFD11F01FCB44140080DA43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD11EF1FCB44140080DA43 /* AppDelegate.swift */; };
 		9DFD11F21FCB44140080DA43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD11F11FCB44140080DA43 /* ViewController.swift */; };
 		9DFD11F71FCB44140080DA43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD11F61FCB44140080DA43 /* Assets.xcassets */; };
-		9DFD11FA1FCB44140080DA43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD11F81FCB44140080DA43 /* LaunchScreen.storyboard */; };
 		9DFD12051FCB44140080DA43 /* PUP_PICTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD12041FCB44140080DA43 /* PUP_PICTests.swift */; };
 		9DFD12101FCB44140080DA43 /* PUP_PICUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD120F1FCB44140080DA43 /* PUP_PICUITests.swift */; };
 		9DFD121E1FCB467D0080DA43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD121D1FCB467D0080DA43 /* Main.storyboard */; };
@@ -161,9 +167,6 @@
 		9DFD12E41FCB47AE0080DA43 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD12E31FCB47AE0080DA43 /* CameraViewController.swift */; };
 		9DFD12E51FCB47AE0080DA43 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD12E31FCB47AE0080DA43 /* CameraViewController.swift */; };
 		9DFD12E61FCB47AE0080DA43 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD12E31FCB47AE0080DA43 /* CameraViewController.swift */; };
-		9DFD12E81FCB549E0080DA43 /* soundButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD12E71FCB549E0080DA43 /* soundButton.png */; };
-		9DFD12E91FCB549E0080DA43 /* soundButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD12E71FCB549E0080DA43 /* soundButton.png */; };
-		9DFD12EA1FCB549E0080DA43 /* soundButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD12E71FCB549E0080DA43 /* soundButton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,11 +188,14 @@
 
 /* Begin PBXFileReference section */
 		9DDBA0691FCB645700BA7B09 /* cameraIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraIcon.png; sourceTree = "<group>"; };
+		9DDBA06B1FCB677300BA7B09 /* soundButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundButton.png; sourceTree = "<group>"; };
+		9DDBA06E1FCB712A00BA7B09 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9DDBA06F1FCB79F200BA7B09 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9DDBA0731FCB7A8F00BA7B09 /* splashImageText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashImageText.png; sourceTree = "<group>"; };
 		9DFD11EC1FCB44140080DA43 /* PUP PIC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PUP PIC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFD11EF1FCB44140080DA43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DFD11F11FCB44140080DA43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9DFD11F61FCB44140080DA43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9DFD11F91FCB44140080DA43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DFD11FB1FCB44140080DA43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DFD12001FCB44140080DA43 /* PUP PICTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PUP PICTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFD12041FCB44140080DA43 /* PUP_PICTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PUP_PICTests.swift; sourceTree = "<group>"; };
@@ -246,7 +252,6 @@
 		9DFD12501FCB46E40080DA43 /* PupPicIconSplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PupPicIconSplash.jpg; sourceTree = "<group>"; };
 		9DFD12521FCB46E40080DA43 /* whiteRing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteRing.png; sourceTree = "<group>"; };
 		9DFD12E31FCB47AE0080DA43 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		9DFD12E71FCB549E0080DA43 /* soundButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = soundButton.png; path = Images/soundButton.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +279,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9DDBA06D1FCB712900BA7B09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DDBA06E1FCB712A00BA7B09 /* MobileCoreServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9DFD11E31FCB44140080DA43 = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +296,7 @@
 				9DFD12031FCB44140080DA43 /* PUP PICTests */,
 				9DFD120E1FCB44140080DA43 /* PUP PICUITests */,
 				9DFD11ED1FCB44140080DA43 /* Products */,
+				9DDBA06D1FCB712900BA7B09 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -304,7 +318,7 @@
 				9DFD11F11FCB44140080DA43 /* ViewController.swift */,
 				9DFD121D1FCB467D0080DA43 /* Main.storyboard */,
 				9DFD11F61FCB44140080DA43 /* Assets.xcassets */,
-				9DFD11F81FCB44140080DA43 /* LaunchScreen.storyboard */,
+				9DDBA06F1FCB79F200BA7B09 /* LaunchScreen.storyboard */,
 				9DFD11FB1FCB44140080DA43 /* Info.plist */,
 			);
 			path = "PUP PIC";
@@ -359,8 +373,9 @@
 		9DFD12371FCB46E40080DA43 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9DDBA0731FCB7A8F00BA7B09 /* splashImageText.png */,
+				9DDBA06B1FCB677300BA7B09 /* soundButton.png */,
 				9DDBA0691FCB645700BA7B09 /* cameraIcon.png */,
-				9DFD12E71FCB549E0080DA43 /* soundButton.png */,
 				9DFD12381FCB46E40080DA43 /* 10Pug.png */,
 				9DFD12391FCB46E40080DA43 /* 11TennisBall.png */,
 				9DFD123A1FCB46E40080DA43 /* 12Wolf.png */,
@@ -517,7 +532,6 @@
 				9DFD12DA1FCB46E50080DA43 /* PupPicIconSplash.jpg in Resources */,
 				9DFD12921FCB46E40080DA43 /* 10Pug.png in Resources */,
 				9DFD125F1FCB46E40080DA43 /* dog4sound.mp3 in Resources */,
-				9DFD11FA1FCB44140080DA43 /* LaunchScreen.storyboard in Resources */,
 				9DFD12D71FCB46E50080DA43 /* flashImage.png in Resources */,
 				9DFD12651FCB46E40080DA43 /* dog6sound.mp3 in Resources */,
 				9DFD12861FCB46E40080DA43 /* shortSqueaktoy.mp3 in Resources */,
@@ -533,9 +547,10 @@
 				9DFD12C81FCB46E50080DA43 /* 7Scottie.png in Resources */,
 				9DFD12C51FCB46E50080DA43 /* 6Squirell.png in Resources */,
 				9DFD12D41FCB46E50080DA43 /* closeImage.png in Resources */,
-				9DFD12E81FCB549E0080DA43 /* soundButton.png in Resources */,
+				9DDBA06C1FCB677400BA7B09 /* soundButton.png in Resources */,
 				9DFD126E1FCB46E40080DA43 /* duckQuack.mp3 in Resources */,
 				9DFD129B1FCB46E40080DA43 /* 13GSD.png in Resources */,
+				9DDBA0701FCB79F200BA7B09 /* LaunchScreen.storyboard in Resources */,
 				9DFD12591FCB46E40080DA43 /* dog2sound.mp3 in Resources */,
 				9DFD12A71FCB46E40080DA43 /* 17Marmot.png in Resources */,
 				9DFD12801FCB46E40080DA43 /* ratSound.mp3 in Resources */,
@@ -543,6 +558,7 @@
 				9DFD12831FCB46E40080DA43 /* rubberDuckSqueak.mp3 in Resources */,
 				9DFD127D1FCB46E40080DA43 /* pikaConversation.mp3 in Resources */,
 				9DFD12531FCB46E40080DA43 /* catMeow.mp3 in Resources */,
+				9DDBA0741FCB7A8F00BA7B09 /* splashImageText.png in Resources */,
 				9DFD11F71FCB44140080DA43 /* Assets.xcassets in Resources */,
 				9DFD12BF1FCB46E50080DA43 /* 4Golden.png in Resources */,
 				9DFD12B31FCB46E40080DA43 /* 20Dogs.png in Resources */,
@@ -558,6 +574,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DFD12751FCB46E40080DA43 /* longSqueaktoy.mp3 in Resources */,
+				9DDBA0751FCB7A8F00BA7B09 /* splashImageText.png in Resources */,
 				9DFD12961FCB46E40080DA43 /* 11TennisBall.png in Resources */,
 				9DFD125D1FCB46E40080DA43 /* dog3sound.mp3 in Resources */,
 				9DFD127E1FCB46E40080DA43 /* pikaConversation.mp3 in Resources */,
@@ -568,9 +585,9 @@
 				9DFD12901FCB46E40080DA43 /* wolfHowl.mp3 in Resources */,
 				9DFD12601FCB46E40080DA43 /* dog4sound.mp3 in Resources */,
 				9DFD12B11FCB46E40080DA43 /* 1Dachshund.png in Resources */,
+				9DDBA0711FCB79F200BA7B09 /* LaunchScreen.storyboard in Resources */,
 				9DFD12B71FCB46E40080DA43 /* 21Mouse.png in Resources */,
 				9DFD126C1FCB46E40080DA43 /* doorBell.mp3 in Resources */,
-				9DFD12E91FCB549E0080DA43 /* soundButton.png in Resources */,
 				9DFD12C01FCB46E50080DA43 /* 4Golden.png in Resources */,
 				9DFD12BA1FCB46E50080DA43 /* 2Doorbell.png in Resources */,
 				9DFD12571FCB46E40080DA43 /* dog1sound.mp3 in Resources */,
@@ -614,6 +631,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DFD12761FCB46E40080DA43 /* longSqueaktoy.mp3 in Resources */,
+				9DDBA0761FCB7A8F00BA7B09 /* splashImageText.png in Resources */,
 				9DFD12971FCB46E40080DA43 /* 11TennisBall.png in Resources */,
 				9DFD125E1FCB46E40080DA43 /* dog3sound.mp3 in Resources */,
 				9DFD127F1FCB46E40080DA43 /* pikaConversation.mp3 in Resources */,
@@ -624,9 +642,9 @@
 				9DFD12911FCB46E40080DA43 /* wolfHowl.mp3 in Resources */,
 				9DFD12611FCB46E40080DA43 /* dog4sound.mp3 in Resources */,
 				9DFD12B21FCB46E40080DA43 /* 1Dachshund.png in Resources */,
+				9DDBA0721FCB79F200BA7B09 /* LaunchScreen.storyboard in Resources */,
 				9DFD12B81FCB46E40080DA43 /* 21Mouse.png in Resources */,
 				9DFD126D1FCB46E40080DA43 /* doorBell.mp3 in Resources */,
-				9DFD12EA1FCB549E0080DA43 /* soundButton.png in Resources */,
 				9DFD12C11FCB46E50080DA43 /* 4Golden.png in Resources */,
 				9DFD12BB1FCB46E50080DA43 /* 2Doorbell.png in Resources */,
 				9DFD12581FCB46E40080DA43 /* dog1sound.mp3 in Resources */,
@@ -710,17 +728,6 @@
 			targetProxy = 9DFD120C1FCB44140080DA43 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		9DFD11F81FCB44140080DA43 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9DFD11F91FCB44140080DA43 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9DFD12121FCB44140080DA43 /* Debug */ = {
@@ -837,6 +844,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3P56422RMM;
 				INFOPLIST_FILE = "PUP PIC/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pupventure.PUP-PIC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -852,6 +860,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3P56422RMM;
 				INFOPLIST_FILE = "PUP PIC/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pupventure.PUP-PIC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

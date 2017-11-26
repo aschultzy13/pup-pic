@@ -565,10 +565,13 @@ UINavigationControllerDelegate {
         }
     }
     
-    @IBAction func cameraButton(_ sender: Any) {
-        performSegue(withIdentifier: "toCamera", sender: nil)
+    
+    @IBOutlet weak var backToCamera: UIButton!
+    @IBAction func backToCamera(_ sender: Any) {
         stopAudio()
+        backToCamera.showsTouchWhenHighlighted = true
     }
+    
     
     func stopAudio() {
         kittenMeow.stop()

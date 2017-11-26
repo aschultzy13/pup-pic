@@ -273,14 +273,15 @@
                                     <action selector="dog5barkButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uom-ap-Nqf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh9-Mr-PtV">
-                                <rect key="frame" x="24" y="20" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh9-Mr-PtV">
+                                <rect key="frame" x="26" y="30" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="TSE-Y9-03a"/>
-                                    <constraint firstAttribute="height" constant="50" id="YpS-IG-bQl"/>
+                                    <constraint firstAttribute="width" constant="40" id="TSE-Y9-03a"/>
+                                    <constraint firstAttribute="height" constant="40" id="YpS-IG-bQl"/>
                                 </constraints>
                                 <state key="normal" image="cameraIcon.png"/>
                                 <connections>
+                                    <action selector="backToCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zs2-yy-wUt"/>
                                     <segue destination="SBg-nO-8f1" kind="presentation" id="nPM-TQ-Fog"/>
                                 </connections>
                             </button>
@@ -311,7 +312,7 @@
                             <constraint firstItem="Nqz-XW-mem" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="KB5-Ny-ery"/>
                             <constraint firstItem="99T-xe-KWD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LJA-7H-Czl"/>
                             <constraint firstItem="Hof-Es-qLr" firstAttribute="top" secondItem="gh9-Mr-PtV" secondAttribute="bottom" constant="10" id="LSD-ZZ-L4C"/>
-                            <constraint firstItem="gh9-Mr-PtV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="M74-Ic-6px"/>
+                            <constraint firstItem="gh9-Mr-PtV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="30" id="M74-Ic-6px"/>
                             <constraint firstItem="4Dd-LF-IRy" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="Nem-dQ-LIV"/>
                             <constraint firstItem="8mv-ey-aeu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Obg-EL-BZ1"/>
                             <constraint firstItem="RrB-lb-NLT" firstAttribute="top" secondItem="Hof-Es-qLr" secondAttribute="bottom" constant="3" id="OtO-gQ-CUw"/>
@@ -358,6 +359,7 @@
                     <navigationItem key="navigationItem" id="RUV-Hf-Z14"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="backToCamera" destination="gh9-Mr-PtV" id="Hji-Sm-iDX"/>
                         <outlet property="ballSqueakButton" destination="hMt-HC-qeQ" id="cfZ-78-H2l"/>
                         <outlet property="dog1barkButton" destination="Nqz-XW-mem" id="TC9-xm-xSP"/>
                         <outlet property="dog2barkButton" destination="RrB-lb-NLT" id="XsU-2R-7h2"/>
@@ -398,7 +400,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D16-m8-I46">
-                                <rect key="frame" x="270" y="604" width="50" height="48"/>
+                                <rect key="frame" x="265" y="604" width="50" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="bE8-Gb-n4M"/>
                                     <constraint firstAttribute="height" constant="48" id="nZf-ss-jdZ"/>
@@ -781,13 +783,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVi-MG-Hbg">
-                                <rect key="frame" x="340" y="612" width="40" height="40"/>
+                                <rect key="frame" x="335" y="609" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IeB-iN-deW"/>
                                     <constraint firstAttribute="width" constant="40" id="g7E-4O-Z58"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="soundButton.png"/>
                                 <connections>
+                                    <action selector="accessSoundButtons:" destination="SBg-nO-8f1" eventType="touchUpInside" id="IR3-hr-fz5"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="z5L-KC-ZYz"/>
                                 </connections>
                             </button>
@@ -804,13 +807,13 @@
                             <constraint firstItem="ddr-Bf-KYf" firstAttribute="top" secondItem="15F-LZ-YCu" secondAttribute="bottom" id="G8c-gk-jcT"/>
                             <constraint firstItem="Zee-lV-0ke" firstAttribute="top" secondItem="15F-LZ-YCu" secondAttribute="bottom" id="GFR-wn-dGb"/>
                             <constraint firstAttribute="trailing" secondItem="Zee-lV-0ke" secondAttribute="trailing" id="ILt-3q-aDG"/>
-                            <constraint firstAttribute="bottom" secondItem="RVi-MG-Hbg" secondAttribute="bottom" constant="15" id="MyD-lM-yr7"/>
+                            <constraint firstAttribute="bottom" secondItem="RVi-MG-Hbg" secondAttribute="bottom" constant="18" id="MyD-lM-yr7"/>
                             <constraint firstItem="9MV-VT-5do" firstAttribute="leading" secondItem="dWl-8W-ArJ" secondAttribute="leading" constant="18" id="Uzj-Ey-hjr"/>
                             <constraint firstItem="Zee-lV-0ke" firstAttribute="leading" secondItem="dWl-8W-ArJ" secondAttribute="leading" id="WR4-GH-mhm"/>
                             <constraint firstItem="SVI-ln-paZ" firstAttribute="leading" secondItem="dWl-8W-ArJ" secondAttribute="leading" id="XSO-nB-mS5"/>
                             <constraint firstItem="Zee-lV-0ke" firstAttribute="top" secondItem="15F-LZ-YCu" secondAttribute="bottom" id="gpd-Wy-Uwl"/>
                             <constraint firstItem="cEr-4C-oJs" firstAttribute="leading" secondItem="xe2-kr-ehj" secondAttribute="trailing" constant="20" id="jpR-1B-IlA"/>
-                            <constraint firstItem="D16-m8-I46" firstAttribute="leading" secondItem="cEr-4C-oJs" secondAttribute="trailing" constant="30" id="sEm-Xb-juE"/>
+                            <constraint firstItem="D16-m8-I46" firstAttribute="leading" secondItem="cEr-4C-oJs" secondAttribute="trailing" constant="25" id="sEm-Xb-juE"/>
                             <constraint firstItem="Zee-lV-0ke" firstAttribute="top" secondItem="dWl-8W-ArJ" secondAttribute="topMargin" id="tlb-zj-EnD"/>
                             <constraint firstAttribute="bottom" secondItem="9MV-VT-5do" secondAttribute="bottom" constant="13" id="uv4-17-QYc"/>
                             <constraint firstAttribute="bottom" secondItem="D16-m8-I46" secondAttribute="bottom" constant="15" id="xkA-hI-wGt"/>
@@ -824,6 +827,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="400" height="667"/>
                     <connections>
+                        <outlet property="accessSoundButtons" destination="RVi-MG-Hbg" id="yLn-Jo-Iq7"/>
                         <outlet property="ballSqueakButton" destination="S6p-8h-G0H" id="1bo-h4-jrn"/>
                         <outlet property="cameraView" destination="dWl-8W-ArJ" id="od0-Hc-VRH"/>
                         <outlet property="cancelButton" destination="ddr-Bf-KYf" id="HDf-eF-FFB"/>
@@ -886,7 +890,7 @@
         <image name="cameraSwitch.png" width="512" height="512"/>
         <image name="closeImage.png" width="720" height="720"/>
         <image name="flashImage.png" width="512" height="512"/>
-        <image name="soundButton.png" width="720" height="720"/>
+        <image name="soundButton.png" width="512" height="512"/>
         <image name="whiteRing.png" width="600" height="600"/>
     </resources>
 </document>

@@ -10,6 +10,8 @@ import UIKit
 import AVFoundation
 import Photos
 import MediaPlayer
+import MobileCoreServices
+
 
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -61,6 +63,15 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate, UII
         scrollView.contentSize.height = 100
         flashButton.alpha = 0.3
         updateThumbnailButton()
+        updateThumbnailButton()
+        
+        // Recognize shutter button presses
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(normalTap(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        shutterButton.addGestureRecognizer(tapGesture)
+        
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap(_:)))
+        shutterButton.addGestureRecognizer(longGesture)
         
         // Listen for device rotation
         NotificationCenter.default.addObserver(
@@ -540,6 +551,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate, UII
         scrollView.isHidden = true
         photoView.image = image
         flashButton.isHidden = true
+        accessSoundButtons.isHidden = true
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -585,14 +597,10 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate, UII
 //        }
 //    }
     
+   
     
-    
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-    @IBOutlet weak var photoView: UIImageView!
-    
-    @IBOutlet weak var shutterButton: UIButton!
-    @IBAction func shutterButton(_ sender: Any) {
+    @objc func normalTap(_ sender: UIGestureRecognizer){
+        print("Normal tap")
         shutterButton.alpha = 0.5
         let settings = AVCapturePhotoSettings()
         photoOutput?.capturePhoto(with: settings, delegate: self)
@@ -606,6 +614,27 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate, UII
         }, completion: { (_) in
             shutterView.removeFromSuperview()
         })
+    }
+    
+    @objc func longTap(_ sender: UIGestureRecognizer){
+        print("Long tap")
+        if sender.state == .ended {
+            print("UIGestureRecognizerStateEnded")
+            //Do Whatever You want on End of Gesture
+        }
+        else if sender.state == .began {
+            print("UIGestureRecognizerStateBegan.")
+            //Do Whatever You want on Began of Gesture
+        }
+    }
+    
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var photoView: UIImageView!
+    
+    @IBOutlet weak var shutterButton: UIButton!
+    @IBAction func shutterButton(_ sender: Any) {
     }
 
     @IBOutlet weak var flashButton: UIButton!
@@ -622,6 +651,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate, UII
     @IBOutlet weak var changeCameraButton: UIButton!
     @IBAction func changeCameraButton(_ sender: Any) {
         swapCamera()
+        changeCameraButton.showsTouchWhenHighlighted = true
     }
     
     @IBOutlet var cameraView: UIView!
@@ -629,6 +659,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate, UII
     @IBOutlet weak var imageThumbnailButton: UIButton!
     @IBAction func imageThumbnailButton(_ sender: Any) {
         openGallery()
+        imageThumbnailButton.showsTouchWhenHighlighted = true
     }
     
     @IBOutlet weak var cancelButton: UIButton!
@@ -639,6 +670,14 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate, UII
         changeCameraButton.isHidden = false
         scrollView.isHidden = false
         flashButton.isHidden = false
+        accessSoundButtons.isHidden = false
+    }
+    
+    
+    @IBOutlet weak var accessSoundButtons: UIButton!
+    @IBAction func accessSoundButtons(_ sender: Any) {
+        accessSoundButtons.showsTouchWhenHighlighted = true
+        stopAudio()
     }
     
     // Button Actions
