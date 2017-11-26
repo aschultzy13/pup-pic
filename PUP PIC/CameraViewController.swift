@@ -1,20 +1,26 @@
 //
-//  ViewController.swift
-//  PUP PIC
+//  CameraViewController.swift
+//  dogCapture
 //
-//  Created by Allison Schultz on 11/26/17.
+//  Created by Allison Schultz on 8/10/17.
 //  Copyright © 2017 pupVenture. All rights reserved.
 //
 
 import UIKit
 import AVFoundation
+import Photos
+import MediaPlayer
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate {
+class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
+    var captureSession = AVCaptureSession()
+    var backCamera: AVCaptureDevice?
+    var frontCamera: AVCaptureDevice?
+    var currentCamera: AVCaptureDevice?
+    var photoOutput: AVCapturePhotoOutput?
+    var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    var image: UIImage!
     // Sounds to be played
-    var player : AVAudioPlayer!
     var pikaSqueak = AVAudioPlayer();
     var ballSqueak = AVAudioPlayer();
     var doorBell = AVAudioPlayer();
@@ -36,16 +42,47 @@ UINavigationControllerDelegate {
     var dogWhine = AVAudioPlayer();
     var kittenMeow = AVAudioPlayer();
     var humanWhistle = AVAudioPlayer();
+
+    
     var picker = UIImagePickerController()
+    var flashOn: Bool = false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupCaptureSession()
+        setupDevice()
+        setupInputOutput()
+        setupPreviewLayer()
+        startRunningCaptureSession()
+        cancelButton.isHidden = true
+        scrollView.contentSize.width = 3155
+        scrollView.contentSize.height = 100
+        flashButton.alpha = 0.3
+        updateThumbnailButton()
+        
+        // Listen for device rotation
+        NotificationCenter.default.addObserver(
+            self,
+            selector:  #selector(deviceDidRotate),
+            name: .UIApplicationDidChangeStatusBarOrientation,
+            object: nil
+        )
+        
+//        let volumeView = MPVolumeView(frame: .zero)
+//        view.addSubview(volumeView)
+        
+        // Listen for volume button press
+//        NotificationCenter.default.addObserver(
+//            self,
+//            selector: #selector(volumeChanged(notification:)),
+//            name: NSNotification.Name(rawValue: "AVSystemController_SystemVolumeDidChangeNotification"),
+//            object: nil)
+        
+        
         // Make buttons round and outlined
-        let screenSize = UIScreen.main.bounds
-        let screenHeight = screenSize.height
-        let radius: CGFloat = screenHeight/18
+        let radius: CGFloat = 34
         let outline: CGFloat = 2
         let borderColor: CGColor = UIColor.black.cgColor
         pikaButton.layer.cornerRadius = radius
@@ -120,10 +157,6 @@ UINavigationControllerDelegate {
         dogWhineButton.clipsToBounds = true
         dogWhineButton.layer.borderWidth = outline
         dogWhineButton.layer.borderColor = borderColor
-        humanWhistleButton.layer.cornerRadius = radius
-        humanWhistleButton.clipsToBounds = true
-        humanWhistleButton.layer.borderWidth = outline
-        humanWhistleButton.layer.borderColor = borderColor
         doorBellButton.layer.cornerRadius = radius
         doorBellButton.clipsToBounds = true
         doorBellButton.layer.borderWidth = outline
@@ -132,6 +165,10 @@ UINavigationControllerDelegate {
         meowButton.clipsToBounds = true
         meowButton.layer.borderWidth = outline
         meowButton.layer.borderColor = borderColor
+        humanWhistleButton.layer.cornerRadius = radius
+        humanWhistleButton.clipsToBounds = true
+        humanWhistleButton.layer.borderWidth = outline
+        humanWhistleButton.layer.borderColor = borderColor
         
         // Input sounds and get ready to play
         do {
@@ -153,105 +190,129 @@ UINavigationControllerDelegate {
         } catch {
             print(error)
         }
+        
         do {
             doorBell = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "doorBell", ofType: "mp3")!));
             doorBell.prepareToPlay();
         } catch {
             print(error)
         }
+        
         do {
             duckQuack = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "duckQuack", ofType: "mp3")!));
             duckQuack.prepareToPlay();
         } catch {
             print(error)
         }
+        
         do {
             toySqueak = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "rubberDuckSqueak", ofType: "mp3")!));
             toySqueak.prepareToPlay();
         } catch {
             print(error)
         }
+        
         do {
             squirrelSound = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "squirrel", ofType: "mp3")!));
             squirrelSound.prepareToPlay();
         } catch {
             print(error)
         }
+        
         do {
             longSqueakToy = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "longSqueaktoy", ofType: "mp3")!));
             longSqueakToy.prepareToPlay();
         } catch {
             print(error)
         }
+        
         do {
             shortSqueakToy = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "shortSqueaktoy", ofType: "mp3")!));
             shortSqueakToy.prepareToPlay();
         } catch {
             print(error)
         }
+        
         do {
             mouseSound = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "mouseSound", ofType: "mp3")!));
             mouseSound.prepareToPlay();
         } catch {
             print(error)
         }
+        
         do {
             ratSound = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "ratSound", ofType: "mp3")!));
             ratSound.prepareToPlay();
         } catch {
             print(error)
         }
+        
         do {
             dog1bark = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "dog1sound", ofType: "mp3")!));
             dog1bark.prepareToPlay();
         } catch {
             print(error)
         }
+        
         do {
             dog2bark = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "dog2sound", ofType: "mp3")!));
             dog2bark.prepareToPlay();
         } catch {
             print(error)
         }
+        
         do {
             dog3bark = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "dog3sound", ofType: "mp3")!));
             dog3bark.prepareToPlay();
         } catch {
             print(error)
         }
+        
         do {
             dog4bark = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "dog4sound", ofType: "mp3")!));
             dog4bark.prepareToPlay();
         } catch {
             print(error)
         }
+        
         do {
             dog5bark = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "dog5sound", ofType: "mp3")!));
             dog5bark.prepareToPlay();
         } catch {
             print(error)
         }
+        
         do {
             dog6bark = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "dog6sound", ofType: "mp3")!));
             dog6bark.prepareToPlay();
         } catch {
             print(error)
         }
+        
         do {
             wolfHowl = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "wolfHowl", ofType: "mp3")!));
             wolfHowl.prepareToPlay();
         } catch {
             print(error)
         }
+        
         do {
             packBarking = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "packBarking", ofType: "mp3")!));
             packBarking.prepareToPlay();
         } catch {
             print(error)
         }
+        
         do {
             dogWhine = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "dogCrying", ofType: "mp3")!));
             dogWhine.prepareToPlay();
+        } catch {
+            print(error)
+        }
+        
+        do {
+            kittenMeow = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "catMeow", ofType: "mp3")!));
+            kittenMeow.prepareToPlay();
         } catch {
             print(error)
         }
@@ -261,12 +322,323 @@ UINavigationControllerDelegate {
         } catch {
             print(error)
         }
+    }
+    
+    
+    func setupCaptureSession() {
+    captureSession.sessionPreset = AVCaptureSession.Preset.photo
+    }
+    
+    func setupDevice() {
+            let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera],
+                                                                          mediaType: AVMediaType.video,
+                                                                          position: AVCaptureDevice.Position.unspecified)
+    
+        let devices = deviceDiscoverySession.devices
+        for device in devices {
+            if device.position == AVCaptureDevice.Position.back {
+                backCamera = device
+            }else if device.position == AVCaptureDevice.Position.front{
+                frontCamera = device
+            }
+        }
+        currentCamera = backCamera
+    }
+  
+    //iOS 11
+    func setupInputOutput() {
         do {
-            kittenMeow = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "catMeow", ofType: "mp3")!));
-            kittenMeow.prepareToPlay();
-        } catch {
+            let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera!)
+            captureSession.addInput(captureDeviceInput)
+            photoOutput = AVCapturePhotoOutput()
+            photoOutput?.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])], completionHandler: nil)
+            captureSession.addOutput(photoOutput!)
+        }catch {
             print(error)
         }
+    }
+
+    // iOS 10
+//    func setupInputOutput() {
+//        do {
+//            let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera!)
+//            captureSession.addInput(captureDeviceInput)
+//            photoOutput = AVCapturePhotoOutput()
+//            photoOutput?.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecJPEG])], completionHandler: nil)
+//            captureSession.addOutput(photoOutput!)
+//        }catch {
+//            print(error)
+//        }
+//    }
+    
+    func setupPreviewLayer() {
+        cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
+        cameraPreviewLayer?.frame = self.view.frame
+        self.view.layer.insertSublayer(cameraPreviewLayer!, at: 0)
+    }
+    
+    private func updatePreviewLayer(layer: AVCaptureConnection, orientation: AVCaptureVideoOrientation) {
+        layer.videoOrientation = orientation
+        cameraPreviewLayer?.frame = self.view.bounds
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if let connection =  self.cameraPreviewLayer?.connection  {
+            let currentDevice: UIDevice = UIDevice.current
+            let orientation: UIDeviceOrientation = currentDevice.orientation
+            let previewLayerConnection : AVCaptureConnection = connection
+            if previewLayerConnection.isVideoOrientationSupported {
+                switch (orientation) {
+                case .portrait: updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
+                    break
+                case .landscapeRight: updatePreviewLayer(layer: previewLayerConnection, orientation: .landscapeLeft)
+                    break
+                case .landscapeLeft: updatePreviewLayer(layer: previewLayerConnection, orientation: .landscapeRight)
+                    break
+                case .portraitUpsideDown: updatePreviewLayer(layer: previewLayerConnection, orientation: .portraitUpsideDown)
+                    break
+                default: updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
+                    break
+                }
+            }
+        }
+    }
+    
+    func startRunningCaptureSession() {
+        captureSession.startRunning()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let screenSize = cameraView.bounds.size
+        if let touchPoint = touches.first {
+            let x = touchPoint.location(in: cameraView).y / screenSize.height
+            let y = 1.0 - touchPoint.location(in: cameraView).x / screenSize.width
+            let focusPoint = CGPoint(x: x, y: y)
+            if let device = currentCamera {
+                do {
+                    try device.lockForConfiguration()
+                    device.focusPointOfInterest = focusPoint
+                    device.focusMode = .autoFocus
+                    device.exposurePointOfInterest = focusPoint
+                    device.exposureMode = AVCaptureDevice.ExposureMode.continuousAutoExposure
+                    device.unlockForConfiguration()
+                }catch {}
+            }
+        }
+    }
+    
+    @objc func deviceDidRotate() {
+        print("deviceDidRotate")
+    }
+    
+    func swapCamera() {
+        // Get current input
+        guard let input = captureSession.inputs[0] as? AVCaptureDeviceInput else { return }
+        // Begin new session configuration and defer commit
+        captureSession.beginConfiguration()
+        defer { captureSession.commitConfiguration() }
+        // Create new capture device
+        if currentCamera == backCamera {
+            currentCamera = frontCamera
+        } else {
+            currentCamera = backCamera
+        }
+        // Create new capture input
+        var deviceInput: AVCaptureDeviceInput!
+        do {
+            deviceInput = try AVCaptureDeviceInput(device: currentCamera!)
+        } catch let error {
+            print(error.localizedDescription)
+            return
+        }
+        // Swap capture device inputs
+        captureSession.removeInput(input)
+        captureSession.addInput(deviceInput)
+    }
+    
+    
+    
+    // iOS 11
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+            if let imageData = photo.fileDataRepresentation() {
+                let dataProvider = CGDataProvider(data: imageData as CFData)
+                let cgImageRef = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: CGColorRenderingIntent.absoluteColorimetric)
+                let orientation: UIDeviceOrientation = UIDevice.current.orientation
+                if orientation == UIDeviceOrientation.landscapeRight {
+                    let image = UIImage(cgImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.down)
+                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                } else if orientation == UIDeviceOrientation.landscapeLeft {
+                    let image = UIImage(cgImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.up)
+                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                } else {
+                    let image = UIImage(cgImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.right)
+                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                }
+                shutterButton.alpha = 1
+            }
+    }
+
+    // iOS 10
+//    func photoOutput(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
+//            if let sampleBuffer = photoSampleBuffer {
+//                let imageData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: nil)
+//                let dataProvider = CGDataProvider(data: imageData! as CFData)
+//                let cgImageRef = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: CGColorRenderingIntent.absoluteColorimetric)
+//                let orientation: UIDeviceOrientation = UIDevice.current.orientation
+//                if orientation == UIDeviceOrientation.landscapeRight {
+//                    let image = UIImage(cgImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.down)
+//                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+//                } else if orientation == UIDeviceOrientation.landscapeLeft {
+//                    let image = UIImage(cgImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.up)
+//                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+//                } else {
+//                    let image = UIImage(cgImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.right)
+//                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+//                }
+//                shutterButton.alpha = 1
+//            }
+//        }
+    
+    
+    func openGallery() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = false
+        imagePickerController.sourceType = .photoLibrary
+        self.present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func updateThumbnailButton() {
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        let fetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+        let last = fetchResult.lastObject
+        if let lastAsset = last {
+            let options = PHImageRequestOptions()
+            options.version = .current
+            PHImageManager.default().requestImage(
+                for: lastAsset,
+                targetSize: imageThumbnailButton.bounds.size,
+                contentMode: .aspectFill,
+                options: options,
+                resultHandler: { image, _ in
+                    DispatchQueue.main.async {
+                        self.imageThumbnailButton.setBackgroundImage(image, for: UIControlState.normal)
+                    }
+            })
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        cancelButton.isHidden = false
+        shutterButton.isHidden = true
+        changeCameraButton.isHidden = true
+        scrollView.isHidden = true
+        photoView.image = image
+        flashButton.isHidden = true
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func setTorch() {
+        let myDevice = AVCaptureDevice.default(for: AVMediaType.video)
+        if (myDevice?.hasTorch)! {
+            do {
+                let _ = try myDevice?.lockForConfiguration()
+            } catch {
+                print(error)
+            }
+            if flashOn {
+                myDevice?.torchMode = AVCaptureDevice.TorchMode.on
+            }
+            else
+            {
+                myDevice?.torchMode = AVCaptureDevice.TorchMode.off
+            }
+            myDevice?.unlockForConfiguration()
+        }
+    }
+    
+//    @objc func volumeChanged(notification: NSNotification) {
+//
+//        if let userInfo = notification.userInfo {
+//            if let volumeChangeType = userInfo["AVSystemController_AudioVolumeChangeReasonNotificationParameter"] as? String {
+//                if volumeChangeType == "ExplicitVolumeChange" {
+//                    // your code goes here
+//                    shutterButton.alpha = 0.5
+//                    let settings = AVCapturePhotoSettings()
+//                    photoOutput?.capturePhoto(with: settings, delegate: self)
+//                    settings.isAutoStillImageStabilizationEnabled = true
+//                    updateThumbnailButton()
+//                    let shutterView = UIView(frame: cameraView.frame)
+//                    shutterView.backgroundColor = UIColor.black
+//                    view.addSubview(shutterView)
+//                    UIView.animate(withDuration: 0.3, animations: {
+//                        shutterView.alpha = 0
+//                    }, completion: { (_) in
+//                        shutterView.removeFromSuperview()
+//                    })                }
+//            }
+//        }
+//    }
+    
+    
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var photoView: UIImageView!
+    
+    @IBOutlet weak var shutterButton: UIButton!
+    @IBAction func shutterButton(_ sender: Any) {
+        shutterButton.alpha = 0.5
+        let settings = AVCapturePhotoSettings()
+        photoOutput?.capturePhoto(with: settings, delegate: self)
+        settings.isAutoStillImageStabilizationEnabled = true
+        updateThumbnailButton()
+        let shutterView = UIView(frame: cameraView.frame)
+        shutterView.backgroundColor = UIColor.black
+        view.addSubview(shutterView)
+        UIView.animate(withDuration: 0.3, animations: {
+            shutterView.alpha = 0
+        }, completion: { (_) in
+            shutterView.removeFromSuperview()
+        })
+    }
+
+    @IBOutlet weak var flashButton: UIButton!
+    @IBAction func flashButton(_ sender: Any) {
+        flashOn = !flashOn
+        if !flashOn {
+        flashButton.alpha = 0.3
+        } else {
+            flashButton.alpha = 1
+        }
+        setTorch()
+    }
+    
+    @IBOutlet weak var changeCameraButton: UIButton!
+    @IBAction func changeCameraButton(_ sender: Any) {
+        swapCamera()
+    }
+    
+    @IBOutlet var cameraView: UIView!
+    
+    @IBOutlet weak var imageThumbnailButton: UIButton!
+    @IBAction func imageThumbnailButton(_ sender: Any) {
+        openGallery()
+    }
+    
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBAction func cancelButton(_ sender: Any) {
+        photoView.image = nil
+        cancelButton.isHidden = true
+        shutterButton.isHidden = false
+        changeCameraButton.isHidden = false
+        scrollView.isHidden = false
+        flashButton.isHidden = false
     }
     
     // Button Actions
@@ -537,20 +909,6 @@ UINavigationControllerDelegate {
         }
     }
     
-    @IBOutlet weak var humanWhistleButton: UIButton!
-    @IBAction func humanWhistleButton(_ sender: Any) {
-        humanWhistle.numberOfLoops = -5
-        if humanWhistle.isPlaying {
-            humanWhistle.stop();
-            humanWhistleButton.alpha = 1;
-            humanWhistle.currentTime = 0;
-        } else {
-            stopAudio()
-            humanWhistle.play();
-            humanWhistleButton.alpha = 0.5;
-        }
-    }
-    
     @IBOutlet weak var doorBellButton: UIButton!
     @IBAction func doorBellButton(_ sender: Any) {
         doorBell.numberOfLoops = -5
@@ -565,10 +923,21 @@ UINavigationControllerDelegate {
         }
     }
     
-    @IBAction func cameraButton(_ sender: Any) {
-        performSegue(withIdentifier: "toCamera", sender: nil)
-        stopAudio()
+    
+    @IBOutlet weak var humanWhistleButton: UIButton!
+    @IBAction func humanWhistleButton(_ sender: Any) {
+        humanWhistle.numberOfLoops = -5
+        if humanWhistle.isPlaying {
+            humanWhistle.stop();
+            humanWhistleButton.alpha = 1;
+            humanWhistle.currentTime = 0;
+        } else {
+            stopAudio()
+            humanWhistle.play();
+            humanWhistleButton.alpha = 0.5;
+        }
     }
+    
     
     func stopAudio() {
         kittenMeow.stop()
@@ -634,20 +1003,48 @@ UINavigationControllerDelegate {
         doorBell.stop()
         doorBellButton.alpha = 1;
         doorBell.currentTime = 0;
+        
     }
     
+
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let value =  UIInterfaceOrientation.portrait.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
-        UIViewController.attemptRotationToDeviceOrientation()
-    }
+ 
+    
+    
     
     
 }
+    
 
+
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/aschultzy13/Desktop/PUP PIC/Images/cameraIcon.jpg">
+   </FileRef>
+   <FileRef
       location = "self:PUP PIC.xcodeproj">
    </FileRef>
 </Workspace>

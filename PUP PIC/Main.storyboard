@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SBg-nO-8f1">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PUP_PIC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0T-pA-BJW">
+                                <rect key="frame" x="273" y="80" width="74" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="t0T-pA-BJW" secondAttribute="height" multiplier="1:1" id="uUw-uP-Tdg"/>
+                                </constraints>
+                                <state key="normal" image="3Duck.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="duckQuackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Z5-6n-BIU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdN-tO-ZMa">
+                                <rect key="frame" x="273" y="158" width="74" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PdN-tO-ZMa" secondAttribute="height" multiplier="1:1" id="T1b-86-yMq"/>
+                                </constraints>
+                                <state key="normal" image="6Squirell.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="squirrelButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bl2-wI-q8P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBx-xb-EsZ">
+                                <rect key="frame" x="273" y="236" width="74" height="74.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hBx-xb-EsZ" secondAttribute="height" multiplier="1:1" id="SYF-hg-Txc"/>
+                                </constraints>
+                                <state key="normal" image="9Cat.png"/>
+                                <connections>
+                                    <action selector="meowButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GdV-nB-qzc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrB-lb-NLT">
+                                <rect key="frame" x="12" y="158" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RrB-lb-NLT" secondAttribute="height" multiplier="1:1" id="Jkj-1E-XKV"/>
+                                </constraints>
+                                <state key="normal" image="4Golden.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="dog2barkButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mZZ-5X-Vok"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAu-V2-7VT">
+                                <rect key="frame" x="12" y="236" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CAu-V2-7VT" secondAttribute="height" multiplier="1:1" id="GMr-5G-RMv"/>
+                                </constraints>
+                                <state key="normal" image="7Scottie.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="dog3barkButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0cx-FA-HAD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqz-XW-mem">
+                                <rect key="frame" x="12" y="314" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Nqz-XW-mem" secondAttribute="height" multiplier="1:1" id="tkz-fG-Wbf"/>
+                                </constraints>
+                                <state key="normal" image="10Pug.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="dog1barkButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0BY-rj-Rqm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6d4-ug-gvy">
+                                <rect key="frame" x="12" y="470" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6d4-ug-gvy" secondAttribute="height" multiplier="1:1" id="My2-lH-1FD"/>
+                                </constraints>
+                                <state key="normal" image="16Rottie.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="dog6barkButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pVN-HU-SLE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hof-Es-qLr">
+                                <rect key="frame" x="12" y="80" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Hof-Es-qLr" secondAttribute="height" multiplier="1:1" id="Rlh-LT-7H5"/>
+                                </constraints>
+                                <state key="normal" image="1Dachshund.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="dogWhineButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2lO-yz-kkW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VD-ar-fXu">
+                                <rect key="frame" x="150.5" y="80" width="74" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6VD-ar-fXu" secondAttribute="height" multiplier="1:1" id="yM5-nr-IdU"/>
+                                </constraints>
+                                <state key="normal" image="2Doorbell.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="doorBellButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LkZ-ki-vh8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYG-vg-R0s">
+                                <rect key="frame" x="150.5" y="158" width="74" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OYG-vg-R0s" secondAttribute="height" multiplier="1:1" id="I5E-py-LRh"/>
+                                </constraints>
+                                <state key="normal" image="5Toy1.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="toySqueakButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qjk-7I-XAH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMt-HC-qeQ">
+                                <rect key="frame" x="150.5" y="314.5" width="74" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hMt-HC-qeQ" secondAttribute="height" multiplier="1:1" id="OuB-AQ-oMg"/>
+                                </constraints>
+                                <state key="normal" image="11TennisBall.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="ballSqueakButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3DX-4G-ljD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mv-ey-aeu">
+                                <rect key="frame" x="150.5" y="392.5" width="74" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8mv-ey-aeu" secondAttribute="height" multiplier="1:1" id="gJA-n4-xOJ"/>
+                                </constraints>
+                                <state key="normal" image="14Toy3.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="longSqueakToyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cD5-JO-IFm"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99T-xe-KWD">
+                                <rect key="frame" x="150.5" y="470.5" width="74" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="99T-xe-KWD" secondAttribute="height" multiplier="1:1" id="rZc-VC-DQC"/>
+                                </constraints>
+                                <state key="normal" image="17Marmot.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="pikaButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qYs-m0-o1U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FV8-D5-GzK">
+                                <rect key="frame" x="273" y="470.5" width="74" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FV8-D5-GzK" secondAttribute="height" multiplier="1:1" id="3o4-04-NDo"/>
+                                </constraints>
+                                <state key="normal" image="18Rat.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="ratSoundButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xct-FM-uDV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l94-b7-FwE">
+                                <rect key="frame" x="273" y="392.5" width="74" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="l94-b7-FwE" secondAttribute="height" multiplier="1:1" id="a7W-hH-20a"/>
+                                </constraints>
+                                <state key="normal" image="15Whistle.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="humanWhistleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5mu-lg-xdU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dd-LF-IRy">
+                                <rect key="frame" x="150.5" y="548.5" width="74" height="74.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4Dd-LF-IRy" secondAttribute="height" multiplier="1:1" id="MW9-hZ-1lE"/>
+                                </constraints>
+                                <state key="normal" image="20Dogs.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="packBarkingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FDC-Wb-e1l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbo-yY-Clx">
+                                <rect key="frame" x="273" y="548.5" width="74" height="74.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gbo-yY-Clx" secondAttribute="height" multiplier="1:1" id="0Aj-C5-xdl"/>
+                                </constraints>
+                                <state key="normal" image="21Mouse.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="mouseSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mv2-SK-JIC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pep-iB-a5G">
+                                <rect key="frame" x="12" y="548" width="74" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Pep-iB-a5G" secondAttribute="height" multiplier="1:1" id="YFG-kk-HIQ"/>
+                                </constraints>
+                                <state key="normal" image="19Yorkie.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="dog4barkButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zvi-Mc-imQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRF-VT-HbQ">
+                                <rect key="frame" x="273" y="314.5" width="74" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pRF-VT-HbQ" secondAttribute="height" multiplier="1:1" id="0F4-CR-1AB"/>
+                                </constraints>
+                                <state key="normal" image="12Wolf.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="wolfHowlButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SgI-gd-OfK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVi-Gb-PrD">
+                                <rect key="frame" x="150.5" y="236" width="74" height="74.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DVi-Gb-PrD" secondAttribute="height" multiplier="1:1" id="JaM-x2-fa0"/>
+                                </constraints>
+                                <state key="normal" image="8Toy2.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="shortSqueakToyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hvt-mJ-qnS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtT-fS-cHD">
+                                <rect key="frame" x="12" y="392" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TtT-fS-cHD" secondAttribute="height" multiplier="1:1" id="EZh-rq-fWe"/>
+                                </constraints>
+                                <state key="normal" image="13GSD.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="dog5barkButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uom-ap-Nqf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh9-Mr-PtV">
+                                <rect key="frame" x="24" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="TSE-Y9-03a"/>
+                                    <constraint firstAttribute="height" constant="50" id="YpS-IG-bQl"/>
+                                </constraints>
+                                <state key="normal" image="cameraIcon.png"/>
+                                <connections>
+                                    <segue destination="SBg-nO-8f1" kind="presentation" id="nPM-TQ-Fog"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PdN-tO-ZMa" firstAttribute="top" secondItem="t0T-pA-BJW" secondAttribute="bottom" constant="4" id="49W-Wl-v9a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l94-b7-FwE" secondAttribute="trailing" constant="12" id="79D-fF-iPl"/>
+                            <constraint firstItem="DVi-Gb-PrD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7cs-Y1-sLE"/>
+                            <constraint firstItem="6VD-ar-fXu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Zg-c6-kUf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pRF-VT-HbQ" secondAttribute="trailing" constant="12" id="9vA-1H-rCm"/>
+                            <constraint firstItem="hBx-xb-EsZ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="AWq-qa-ulq"/>
+                            <constraint firstItem="TtT-fS-cHD" firstAttribute="top" secondItem="Nqz-XW-mem" secondAttribute="bottom" constant="3" id="BZZ-KE-kPe"/>
+                            <constraint firstItem="RrB-lb-NLT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="BdG-6Y-pPE"/>
+                            <constraint firstItem="CAu-V2-7VT" firstAttribute="top" secondItem="RrB-lb-NLT" secondAttribute="bottom" constant="3" id="Brm-FW-sAr"/>
+                            <constraint firstItem="t0T-pA-BJW" firstAttribute="top" secondItem="gh9-Mr-PtV" secondAttribute="bottom" constant="10" id="CVx-j1-mkY"/>
+                            <constraint firstItem="gbo-yY-Clx" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="Cei-3Z-TmX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FV8-D5-GzK" secondAttribute="trailing" constant="12" id="FUf-vw-ufy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PdN-tO-ZMa" secondAttribute="trailing" constant="12" id="G15-6y-ADj"/>
+                            <constraint firstItem="Pep-iB-a5G" firstAttribute="top" secondItem="6d4-ug-gvy" secondAttribute="bottom" constant="3" id="GFx-nI-55l"/>
+                            <constraint firstItem="Nqz-XW-mem" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="12" id="GTX-tS-Ffw"/>
+                            <constraint firstItem="OYG-vg-R0s" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="GfQ-z7-hFp"/>
+                            <constraint firstItem="l94-b7-FwE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="GyT-Tg-0I5"/>
+                            <constraint firstItem="Hof-Es-qLr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="12" id="Hs8-Je-Kx9"/>
+                            <constraint firstItem="pRF-VT-HbQ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="IES-8N-dVW"/>
+                            <constraint firstItem="Hof-Es-qLr" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="ISh-Q9-aCA"/>
+                            <constraint firstItem="RrB-lb-NLT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="12" id="K4D-Xc-fa6"/>
+                            <constraint firstItem="Nqz-XW-mem" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="KB5-Ny-ery"/>
+                            <constraint firstItem="99T-xe-KWD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LJA-7H-Czl"/>
+                            <constraint firstItem="Hof-Es-qLr" firstAttribute="top" secondItem="gh9-Mr-PtV" secondAttribute="bottom" constant="10" id="LSD-ZZ-L4C"/>
+                            <constraint firstItem="gh9-Mr-PtV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="M74-Ic-6px"/>
+                            <constraint firstItem="4Dd-LF-IRy" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="Nem-dQ-LIV"/>
+                            <constraint firstItem="8mv-ey-aeu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Obg-EL-BZ1"/>
+                            <constraint firstItem="RrB-lb-NLT" firstAttribute="top" secondItem="Hof-Es-qLr" secondAttribute="bottom" constant="3" id="OtO-gQ-CUw"/>
+                            <constraint firstItem="gbo-yY-Clx" firstAttribute="top" secondItem="FV8-D5-GzK" secondAttribute="bottom" constant="4" id="Ovc-As-3hR"/>
+                            <constraint firstItem="TtT-fS-cHD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="QPK-zt-MpP"/>
+                            <constraint firstItem="6d4-ug-gvy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="12" id="SCg-QU-3be"/>
+                            <constraint firstItem="gh9-Mr-PtV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="SWr-UY-dH8"/>
+                            <constraint firstItem="CAu-V2-7VT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="12" id="Tj9-M5-619"/>
+                            <constraint firstItem="l94-b7-FwE" firstAttribute="top" secondItem="pRF-VT-HbQ" secondAttribute="bottom" constant="4" id="TpB-zs-tq9"/>
+                            <constraint firstItem="8mv-ey-aeu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="V1B-7f-vbR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gbo-yY-Clx" secondAttribute="trailing" constant="12" id="Vmt-2J-6Ce"/>
+                            <constraint firstItem="CAu-V2-7VT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="W6G-B3-3L6"/>
+                            <constraint firstItem="hMt-HC-qeQ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="Wfy-N1-Cte"/>
+                            <constraint firstItem="PdN-tO-ZMa" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="WmE-bv-T4r"/>
+                            <constraint firstItem="FV8-D5-GzK" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="YbY-N5-iFu"/>
+                            <constraint firstItem="6d4-ug-gvy" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="Ybx-Un-sgI"/>
+                            <constraint firstItem="hMt-HC-qeQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZZy-XX-znB"/>
+                            <constraint firstItem="4Dd-LF-IRy" firstAttribute="top" secondItem="99T-xe-KWD" secondAttribute="bottom" constant="4" id="Zbi-9a-zri"/>
+                            <constraint firstItem="6d4-ug-gvy" firstAttribute="top" secondItem="TtT-fS-cHD" secondAttribute="bottom" constant="3" id="ZvF-OU-aBt"/>
+                            <constraint firstItem="TtT-fS-cHD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="12" id="bK4-Wb-lyV"/>
+                            <constraint firstItem="pRF-VT-HbQ" firstAttribute="top" secondItem="hBx-xb-EsZ" secondAttribute="bottom" constant="4" id="bM5-H4-kbp"/>
+                            <constraint firstItem="OYG-vg-R0s" firstAttribute="top" secondItem="6VD-ar-fXu" secondAttribute="bottom" constant="4" id="cdI-NN-2hk"/>
+                            <constraint firstItem="DVi-Gb-PrD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="ghJ-RZ-ihr"/>
+                            <constraint firstItem="Pep-iB-a5G" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="k75-yW-Zag"/>
+                            <constraint firstItem="Pep-iB-a5G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="12" id="k7c-ns-Csf"/>
+                            <constraint firstItem="OYG-vg-R0s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kfu-qE-f6g"/>
+                            <constraint firstItem="hMt-HC-qeQ" firstAttribute="top" secondItem="DVi-Gb-PrD" secondAttribute="bottom" constant="4" id="khU-Yt-waR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="t0T-pA-BJW" secondAttribute="trailing" constant="12" id="lNk-gs-QOW"/>
+                            <constraint firstItem="99T-xe-KWD" firstAttribute="top" secondItem="8mv-ey-aeu" secondAttribute="bottom" constant="4" id="mU5-dH-V7u"/>
+                            <constraint firstItem="6VD-ar-fXu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="nhK-BW-hwc"/>
+                            <constraint firstItem="FV8-D5-GzK" firstAttribute="top" secondItem="l94-b7-FwE" secondAttribute="bottom" constant="4" id="ntU-iD-bVA"/>
+                            <constraint firstItem="hBx-xb-EsZ" firstAttribute="top" secondItem="PdN-tO-ZMa" secondAttribute="bottom" constant="4" id="o4e-dp-mCn"/>
+                            <constraint firstItem="DVi-Gb-PrD" firstAttribute="top" secondItem="OYG-vg-R0s" secondAttribute="bottom" constant="4" id="oCL-qO-sQw"/>
+                            <constraint firstItem="t0T-pA-BJW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="osT-ID-P5L"/>
+                            <constraint firstItem="4Dd-LF-IRy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uM3-ke-mgC"/>
+                            <constraint firstItem="8mv-ey-aeu" firstAttribute="top" secondItem="hMt-HC-qeQ" secondAttribute="bottom" constant="4" id="uPt-hd-bqn"/>
+                            <constraint firstItem="6VD-ar-fXu" firstAttribute="top" secondItem="gh9-Mr-PtV" secondAttribute="bottom" constant="10" id="uW0-9D-Lml"/>
+                            <constraint firstItem="Nqz-XW-mem" firstAttribute="top" secondItem="CAu-V2-7VT" secondAttribute="bottom" constant="3" id="wF5-hQ-P8z"/>
+                            <constraint firstItem="99T-xe-KWD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="ybn-rh-dkW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hBx-xb-EsZ" secondAttribute="trailing" constant="12" id="zb1-GK-gxS"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="RUV-Hf-Z14"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="ballSqueakButton" destination="hMt-HC-qeQ" id="cfZ-78-H2l"/>
+                        <outlet property="dog1barkButton" destination="Nqz-XW-mem" id="TC9-xm-xSP"/>
+                        <outlet property="dog2barkButton" destination="RrB-lb-NLT" id="XsU-2R-7h2"/>
+                        <outlet property="dog3barkButton" destination="CAu-V2-7VT" id="oE9-Md-TQJ"/>
+                        <outlet property="dog4barkButton" destination="Pep-iB-a5G" id="xCR-XV-UGg"/>
+                        <outlet property="dog5barkButton" destination="TtT-fS-cHD" id="y5T-l4-Ccq"/>
+                        <outlet property="dog6barkButton" destination="6d4-ug-gvy" id="ONX-vR-DKz"/>
+                        <outlet property="dogWhineButton" destination="Hof-Es-qLr" id="Knc-2Q-EZN"/>
+                        <outlet property="doorBellButton" destination="6VD-ar-fXu" id="3RU-7e-y98"/>
+                        <outlet property="duckQuackButton" destination="t0T-pA-BJW" id="5iU-7G-jJo"/>
+                        <outlet property="humanWhistleButton" destination="l94-b7-FwE" id="EZk-kX-Ges"/>
+                        <outlet property="longSqueakToyButton" destination="8mv-ey-aeu" id="arK-ip-awf"/>
+                        <outlet property="meowButton" destination="hBx-xb-EsZ" id="hHh-Qi-PEr"/>
+                        <outlet property="mouseSoundButton" destination="gbo-yY-Clx" id="u4J-9n-8qM"/>
+                        <outlet property="packBarkingButton" destination="4Dd-LF-IRy" id="tzV-uh-xND"/>
+                        <outlet property="pikaButton" destination="99T-xe-KWD" id="Dpj-uO-ahg"/>
+                        <outlet property="ratSoundButton" destination="FV8-D5-GzK" id="J9E-nt-xE8"/>
+                        <outlet property="shortSqueakToyButton" destination="DVi-Gb-PrD" id="lt9-Li-NFw"/>
+                        <outlet property="squirrelButton" destination="PdN-tO-ZMa" id="pMP-sR-HEG"/>
+                        <outlet property="toySqueakButton" destination="OYG-vg-R0s" id="qhY-en-o0y"/>
+                        <outlet property="wolfHowlButton" destination="pRF-VT-HbQ" id="nin-E5-NUO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2160.8000000000002" y="104.7976011994003"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="W4x-Hp-lLO">
+            <objects>
+                <viewController storyboardIdentifier="CameraViewController" id="SBg-nO-8f1" customClass="CameraViewController" customModule="PUP_PIC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="15F-LZ-YCu"/>
+                        <viewControllerLayoutGuide type="bottom" id="rOK-Eq-dRV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dWl-8W-ArJ">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D16-m8-I46">
+                                <rect key="frame" x="270" y="604" width="50" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="bE8-Gb-n4M"/>
+                                    <constraint firstAttribute="height" constant="48" id="nZf-ss-jdZ"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="cameraSwitch.png"/>
+                                <connections>
+                                    <action selector="changeCameraButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="4cv-6t-Hhw"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEr-4C-oJs">
+                                <rect key="frame" x="160" y="534" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="MyT-gd-3Mq"/>
+                                    <constraint firstAttribute="height" constant="80" id="OMt-pb-m5e"/>
+                                </constraints>
+                                <state key="normal" image="whiteRing.png"/>
+                                <connections>
+                                    <action selector="shutterButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="P1A-YA-Kyg"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MV-VT-5do">
+                                <rect key="frame" x="18" y="604" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="dhT-r5-RmG"/>
+                                    <constraint firstAttribute="height" constant="50" id="jwa-yf-rRh"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="imageThumbnailButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="IuB-Hf-27U"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zee-lV-0ke">
+                                <rect key="frame" x="0.0" y="20" width="400" height="604"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddr-Bf-KYf">
+                                <rect key="frame" x="0.0" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Bwi-Ba-kKM"/>
+                                    <constraint firstAttribute="width" constant="50" id="bw3-Gr-2hn"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="closeImage.png"/>
+                                <connections>
+                                    <action selector="cancelButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="t8P-Bq-IbW"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" ambiguous="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVI-ln-paZ">
+                                <rect key="frame" x="0.0" y="64" width="2668" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGD-I2-XOA">
+                                        <rect key="frame" x="1570" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="P65-da-LRX"/>
+                                            <constraint firstAttribute="width" constant="70" id="x7q-d4-OwN"/>
+                                        </constraints>
+                                        <state key="normal" image="12Wolf.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="wolfHowlButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="1XP-ol-Osn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkn-z5-9SW">
+                                        <rect key="frame" x="1414" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="0YX-St-WHV"/>
+                                            <constraint firstAttribute="height" constant="70" id="rIF-c2-gR5"/>
+                                        </constraints>
+                                        <state key="normal" image="18Rat.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ratSoundButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="QBb-TV-BeP"/>
+                                        </connections>
+                                    </button>
+                                    <button contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r03-By-CRo">
+                                        <rect key="frame" x="1258" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="Op3-mU-UBS"/>
+                                            <constraint firstAttribute="height" constant="70" id="pRL-5h-1lo"/>
+                                        </constraints>
+                                        <state key="normal" title="Pika" image="17Marmot.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pikaButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="8ll-Kf-gcn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDj-dl-NHQ">
+                                        <rect key="frame" x="1180" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="Qlh-vr-ZU8"/>
+                                            <constraint firstAttribute="height" constant="70" id="ayA-Ax-fC8"/>
+                                        </constraints>
+                                        <state key="normal" image="14Toy3.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="longSqueakToyButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="Y0g-PL-dJh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vnb-nP-Bfd">
+                                        <rect key="frame" x="1336" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="BlJ-xu-St6"/>
+                                            <constraint firstAttribute="width" constant="70" id="zY5-qi-MQq"/>
+                                        </constraints>
+                                        <state key="normal" image="21Mouse.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="mouseSound:" destination="SBg-nO-8f1" eventType="touchUpInside" id="NLX-mF-n7A"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Zo-xx-3k1">
+                                        <rect key="frame" x="10" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="An9-fZ-Vdv"/>
+                                            <constraint firstAttribute="height" constant="70" id="BNc-4V-VzR"/>
+                                        </constraints>
+                                        <state key="normal" image="3Duck.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="duckQuackButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="POx-1c-rRx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoQ-9g-QFj">
+                                        <rect key="frame" x="946" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="b14-Ui-VGm"/>
+                                            <constraint firstAttribute="height" constant="70" id="n4g-Fj-H97"/>
+                                        </constraints>
+                                        <state key="normal" image="5Toy1.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toySqueakButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="Fm2-AG-z2V"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvR-6q-QkE">
+                                        <rect key="frame" x="322" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="H6k-OT-H9W"/>
+                                            <constraint firstAttribute="width" constant="70" id="IKu-9U-F50"/>
+                                        </constraints>
+                                        <state key="normal" image="4Golden.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dog2barkButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="wPN-zJ-36H"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEI-vR-T3Y">
+                                        <rect key="frame" x="1024" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="boh-Ew-C0x"/>
+                                            <constraint firstAttribute="height" constant="70" id="cTW-Uc-Nws"/>
+                                        </constraints>
+                                        <state key="normal" image="8Toy2.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shortSqueakToyButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="h2o-ui-huV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6p-8h-G0H">
+                                        <rect key="frame" x="1102" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="SA3-lH-EkL"/>
+                                            <constraint firstAttribute="height" constant="70" id="onk-9E-HMI"/>
+                                        </constraints>
+                                        <state key="normal" image="11TennisBall.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ballSqueakButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="oKi-6v-I0C"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgN-Ld-I3S">
+                                        <rect key="frame" x="478" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="uZt-4A-CHx"/>
+                                            <constraint firstAttribute="height" constant="70" id="w3P-ST-PCL"/>
+                                        </constraints>
+                                        <state key="normal" image="10Pug.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dog1barkButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="sK2-yl-e6v"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kQ-ml-9rm">
+                                        <rect key="frame" x="244" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="O7C-GP-nvN"/>
+                                            <constraint firstAttribute="height" constant="70" id="fGy-Ea-LjI"/>
+                                        </constraints>
+                                        <state key="normal" image="20Dogs.png">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="packBarkingButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="IgA-SG-WOY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxO-ri-o33">
+                                        <rect key="frame" x="400" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="AUL-Y1-Sty"/>
+                                            <constraint firstAttribute="height" constant="70" id="mkb-7T-r4d"/>
+                                        </constraints>
+                                        <state key="normal" image="7Scottie.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dog3barkButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="P8y-X6-zea"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndl-hF-mpM">
+                                        <rect key="frame" x="556" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="I0j-Re-krY"/>
+                                            <constraint firstAttribute="width" constant="70" id="Rco-77-Cps"/>
+                                        </constraints>
+                                        <state key="normal" image="13GSD.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dog5barkButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="Mfo-5C-U01"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0S3-9M-xkw">
+                                        <rect key="frame" x="634" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="LbT-3u-8gp"/>
+                                            <constraint firstAttribute="width" constant="70" id="bf7-iV-dJS"/>
+                                        </constraints>
+                                        <state key="normal" image="16Rottie.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dog6barkButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="amV-c5-Vxg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBy-oe-Qox">
+                                        <rect key="frame" x="868" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="5x5-pP-MSe"/>
+                                            <constraint firstAttribute="width" constant="70" id="Bde-xT-sts"/>
+                                        </constraints>
+                                        <state key="normal" image="2Doorbell.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doorBellButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="ujC-j6-Cb8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43c-lH-AEg">
+                                        <rect key="frame" x="790" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="7q6-Ai-54v"/>
+                                            <constraint firstAttribute="height" constant="70" id="jZr-1Q-lcD"/>
+                                        </constraints>
+                                        <state key="normal" image="1Dachshund.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dogWhineButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="AGC-KF-pEx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4e-XA-urm">
+                                        <rect key="frame" x="712" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="TWA-If-D9s"/>
+                                            <constraint firstAttribute="height" constant="70" id="kA3-k6-aj6"/>
+                                        </constraints>
+                                        <state key="normal" image="19Yorkie.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dog4barkButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="7ag-ko-JET"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiT-bF-OTW">
+                                        <rect key="frame" x="88" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="enR-xs-63H"/>
+                                            <constraint firstAttribute="height" constant="70" id="q1y-On-PeX"/>
+                                        </constraints>
+                                        <state key="normal" image="6Squirell.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="squirrelButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="lRD-Gh-opm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dS-q5-n0p">
+                                        <rect key="frame" x="166" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="PSb-k9-MLl"/>
+                                            <constraint firstAttribute="width" constant="70" id="eqJ-QK-fLE"/>
+                                        </constraints>
+                                        <state key="normal" image="9Cat.png"/>
+                                        <connections>
+                                            <action selector="meowButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="GPZ-tq-jc7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddr-tT-7QY">
+                                        <rect key="frame" x="1492" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="h9E-DM-Pl5"/>
+                                            <constraint firstAttribute="width" constant="70" id="w16-sM-UdN"/>
+                                        </constraints>
+                                        <state key="normal" image="15Whistle.png">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="humanWhistleButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="7Fe-8s-qKS"/>
+                                            <action selector="humanWhistleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c13-tb-wCK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="1Gt-9V-Noc"/>
+                                    <constraint firstItem="Ddr-tT-7QY" firstAttribute="leading" secondItem="qkn-z5-9SW" secondAttribute="trailing" constant="8" id="1Uc-Jx-U2p"/>
+                                    <constraint firstItem="KBy-oe-Qox" firstAttribute="leading" secondItem="43c-lH-AEg" secondAttribute="trailing" constant="8" id="4RY-Bj-1HP"/>
+                                    <constraint firstItem="S6p-8h-G0H" firstAttribute="leading" secondItem="dEI-vR-T3Y" secondAttribute="trailing" constant="8" id="4f2-d3-q6N"/>
+                                    <constraint firstItem="aoQ-9g-QFj" firstAttribute="centerY" secondItem="KBy-oe-Qox" secondAttribute="centerY" id="4ki-KT-hz4"/>
+                                    <constraint firstItem="vxO-ri-o33" firstAttribute="leading" secondItem="qvR-6q-QkE" secondAttribute="trailing" constant="8" id="6Kw-Gj-BaO"/>
+                                    <constraint firstItem="dEI-vR-T3Y" firstAttribute="leading" secondItem="aoQ-9g-QFj" secondAttribute="trailing" constant="8" id="6pO-FM-g5u"/>
+                                    <constraint firstItem="8dS-q5-n0p" firstAttribute="centerY" secondItem="SVI-ln-paZ" secondAttribute="centerY" id="8bd-rH-t9Y"/>
+                                    <constraint firstItem="W4e-XA-urm" firstAttribute="leading" secondItem="0S3-9M-xkw" secondAttribute="trailing" constant="8" id="Ao9-Kp-9cK"/>
+                                    <constraint firstItem="UGD-I2-XOA" firstAttribute="leading" secondItem="Ddr-tT-7QY" secondAttribute="trailing" constant="8" id="BkS-US-LAi"/>
+                                    <constraint firstItem="SDj-dl-NHQ" firstAttribute="centerY" secondItem="S6p-8h-G0H" secondAttribute="centerY" id="Cza-cQ-bQK"/>
+                                    <constraint firstItem="EiT-bF-OTW" firstAttribute="leading" secondItem="3Zo-xx-3k1" secondAttribute="trailing" constant="8" id="D9g-Ac-LVN"/>
+                                    <constraint firstItem="vxO-ri-o33" firstAttribute="centerY" secondItem="SVI-ln-paZ" secondAttribute="centerY" id="F7g-M3-dSb"/>
+                                    <constraint firstItem="SDj-dl-NHQ" firstAttribute="leading" secondItem="S6p-8h-G0H" secondAttribute="trailing" constant="8" id="H8J-w6-OeM"/>
+                                    <constraint firstItem="KBy-oe-Qox" firstAttribute="centerY" secondItem="43c-lH-AEg" secondAttribute="centerY" id="HgZ-E2-PYl"/>
+                                    <constraint firstItem="W4e-XA-urm" firstAttribute="centerY" secondItem="0S3-9M-xkw" secondAttribute="centerY" id="Jlx-jx-cw3"/>
+                                    <constraint firstItem="Vnb-nP-Bfd" firstAttribute="leading" secondItem="r03-By-CRo" secondAttribute="trailing" constant="8" id="LbE-67-sSE"/>
+                                    <constraint firstItem="Vnb-nP-Bfd" firstAttribute="centerY" secondItem="r03-By-CRo" secondAttribute="centerY" id="Lyi-RM-UDt"/>
+                                    <constraint firstItem="2kQ-ml-9rm" firstAttribute="leading" secondItem="8dS-q5-n0p" secondAttribute="trailing" constant="8" id="ME6-sX-tag"/>
+                                    <constraint firstItem="UGD-I2-XOA" firstAttribute="centerY" secondItem="qkn-z5-9SW" secondAttribute="centerY" id="MzK-mi-5dB"/>
+                                    <constraint firstItem="43c-lH-AEg" firstAttribute="leading" secondItem="W4e-XA-urm" secondAttribute="trailing" constant="8" id="OOp-e4-L4K"/>
+                                    <constraint firstItem="3Zo-xx-3k1" firstAttribute="centerY" secondItem="SVI-ln-paZ" secondAttribute="centerY" id="SH2-pw-KhU"/>
+                                    <constraint firstItem="qkn-z5-9SW" firstAttribute="centerY" secondItem="Vnb-nP-Bfd" secondAttribute="centerY" id="TMr-vQ-ept"/>
+                                    <constraint firstItem="S6p-8h-G0H" firstAttribute="centerY" secondItem="dEI-vR-T3Y" secondAttribute="centerY" id="TPw-RO-q09"/>
+                                    <constraint firstAttribute="width" constant="1880" id="Xrd-rz-JkE"/>
+                                    <constraint firstItem="qkn-z5-9SW" firstAttribute="leading" secondItem="Vnb-nP-Bfd" secondAttribute="trailing" constant="8" id="Y5T-Xw-R7U"/>
+                                    <constraint firstItem="0S3-9M-xkw" firstAttribute="leading" secondItem="ndl-hF-mpM" secondAttribute="trailing" constant="8" id="ZNG-Ge-dX1"/>
+                                    <constraint firstItem="qvR-6q-QkE" firstAttribute="centerY" secondItem="SVI-ln-paZ" secondAttribute="centerY" id="ahd-KW-35D"/>
+                                    <constraint firstItem="ndl-hF-mpM" firstAttribute="leading" secondItem="UgN-Ld-I3S" secondAttribute="trailing" constant="8" id="cHY-c1-X8F"/>
+                                    <constraint firstItem="r03-By-CRo" firstAttribute="leading" secondItem="SDj-dl-NHQ" secondAttribute="trailing" constant="8" id="dl0-GT-f1K"/>
+                                    <constraint firstItem="2kQ-ml-9rm" firstAttribute="centerY" secondItem="SVI-ln-paZ" secondAttribute="centerY" id="eC3-dI-GRX"/>
+                                    <constraint firstItem="aoQ-9g-QFj" firstAttribute="leading" secondItem="KBy-oe-Qox" secondAttribute="trailing" constant="8" id="gpE-zD-Nsg"/>
+                                    <constraint firstItem="0S3-9M-xkw" firstAttribute="centerY" secondItem="ndl-hF-mpM" secondAttribute="centerY" id="jb8-sh-asS"/>
+                                    <constraint firstItem="ndl-hF-mpM" firstAttribute="centerY" secondItem="UgN-Ld-I3S" secondAttribute="centerY" id="ntU-A3-EqD"/>
+                                    <constraint firstItem="r03-By-CRo" firstAttribute="centerY" secondItem="SDj-dl-NHQ" secondAttribute="centerY" id="pAj-3R-Yx7"/>
+                                    <constraint firstItem="3Zo-xx-3k1" firstAttribute="leading" secondItem="SVI-ln-paZ" secondAttribute="leading" constant="10" id="s0Q-xA-eOd"/>
+                                    <constraint firstItem="EiT-bF-OTW" firstAttribute="centerY" secondItem="SVI-ln-paZ" secondAttribute="centerY" id="scC-dS-UJK"/>
+                                    <constraint firstItem="dEI-vR-T3Y" firstAttribute="centerY" secondItem="aoQ-9g-QFj" secondAttribute="centerY" id="tzE-0U-FFo"/>
+                                    <constraint firstItem="UgN-Ld-I3S" firstAttribute="leading" secondItem="vxO-ri-o33" secondAttribute="trailing" constant="8" id="uOJ-U7-JbC"/>
+                                    <constraint firstItem="8dS-q5-n0p" firstAttribute="leading" secondItem="EiT-bF-OTW" secondAttribute="trailing" constant="8" id="ugh-IW-O0p"/>
+                                    <constraint firstItem="qkn-z5-9SW" firstAttribute="centerY" secondItem="Ddr-tT-7QY" secondAttribute="centerY" id="xPC-H4-9nt"/>
+                                    <constraint firstItem="43c-lH-AEg" firstAttribute="centerY" secondItem="W4e-XA-urm" secondAttribute="centerY" id="xzC-eS-VZg"/>
+                                    <constraint firstItem="qvR-6q-QkE" firstAttribute="leading" secondItem="2kQ-ml-9rm" secondAttribute="trailing" constant="8" id="yf8-gm-8Ec"/>
+                                    <constraint firstItem="UgN-Ld-I3S" firstAttribute="centerY" secondItem="vxO-ri-o33" secondAttribute="centerY" id="zhA-5W-8tl"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xe2-kr-ehj">
+                                <rect key="frame" x="105" y="564" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="9T4-oX-hng"/>
+                                    <constraint firstAttribute="height" constant="35" id="yxf-Fu-vBu"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="flashImage.png"/>
+                                <connections>
+                                    <action selector="flashButton:" destination="SBg-nO-8f1" eventType="touchUpInside" id="beO-Sj-K2y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVi-MG-Hbg">
+                                <rect key="frame" x="340" y="612" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="IeB-iN-deW"/>
+                                    <constraint firstAttribute="width" constant="40" id="g7E-4O-Z58"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="soundButton.png"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="z5L-KC-ZYz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RVi-MG-Hbg" firstAttribute="leading" secondItem="D16-m8-I46" secondAttribute="trailing" constant="20" id="3KL-ih-4vg"/>
+                            <constraint firstItem="cEr-4C-oJs" firstAttribute="top" secondItem="Zee-lV-0ke" secondAttribute="bottom" constant="-90" id="4C4-11-UYi"/>
+                            <constraint firstItem="ddr-Bf-KYf" firstAttribute="leading" secondItem="dWl-8W-ArJ" secondAttribute="leading" id="7uw-Ar-eWE"/>
+                            <constraint firstItem="SVI-ln-paZ" firstAttribute="top" secondItem="15F-LZ-YCu" secondAttribute="bottom" id="8ob-B0-FQ3"/>
+                            <constraint firstItem="Zee-lV-0ke" firstAttribute="top" secondItem="ddr-Bf-KYf" secondAttribute="top" id="Dhs-ZH-Mv0"/>
+                            <constraint firstItem="cEr-4C-oJs" firstAttribute="centerX" secondItem="dWl-8W-ArJ" secondAttribute="centerX" id="FpP-kd-Y0g"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Zee-lV-0ke" secondAttribute="bottom" constant="-1" id="Fy8-Xw-7Ka"/>
+                            <constraint firstItem="ddr-Bf-KYf" firstAttribute="top" secondItem="15F-LZ-YCu" secondAttribute="bottom" id="G8c-gk-jcT"/>
+                            <constraint firstItem="Zee-lV-0ke" firstAttribute="top" secondItem="15F-LZ-YCu" secondAttribute="bottom" id="GFR-wn-dGb"/>
+                            <constraint firstAttribute="trailing" secondItem="Zee-lV-0ke" secondAttribute="trailing" id="ILt-3q-aDG"/>
+                            <constraint firstAttribute="bottom" secondItem="RVi-MG-Hbg" secondAttribute="bottom" constant="15" id="MyD-lM-yr7"/>
+                            <constraint firstItem="9MV-VT-5do" firstAttribute="leading" secondItem="dWl-8W-ArJ" secondAttribute="leading" constant="18" id="Uzj-Ey-hjr"/>
+                            <constraint firstItem="Zee-lV-0ke" firstAttribute="leading" secondItem="dWl-8W-ArJ" secondAttribute="leading" id="WR4-GH-mhm"/>
+                            <constraint firstItem="SVI-ln-paZ" firstAttribute="leading" secondItem="dWl-8W-ArJ" secondAttribute="leading" id="XSO-nB-mS5"/>
+                            <constraint firstItem="Zee-lV-0ke" firstAttribute="top" secondItem="15F-LZ-YCu" secondAttribute="bottom" id="gpd-Wy-Uwl"/>
+                            <constraint firstItem="cEr-4C-oJs" firstAttribute="leading" secondItem="xe2-kr-ehj" secondAttribute="trailing" constant="20" id="jpR-1B-IlA"/>
+                            <constraint firstItem="D16-m8-I46" firstAttribute="leading" secondItem="cEr-4C-oJs" secondAttribute="trailing" constant="30" id="sEm-Xb-juE"/>
+                            <constraint firstItem="Zee-lV-0ke" firstAttribute="top" secondItem="dWl-8W-ArJ" secondAttribute="topMargin" id="tlb-zj-EnD"/>
+                            <constraint firstAttribute="bottom" secondItem="9MV-VT-5do" secondAttribute="bottom" constant="13" id="uv4-17-QYc"/>
+                            <constraint firstAttribute="bottom" secondItem="D16-m8-I46" secondAttribute="bottom" constant="15" id="xkA-hI-wGt"/>
+                            <constraint firstItem="xe2-kr-ehj" firstAttribute="top" secondItem="cEr-4C-oJs" secondAttribute="top" constant="30" id="zoI-7R-ODq"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="se3-gi-Ccr">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <size key="freeformSize" width="400" height="667"/>
+                    <connections>
+                        <outlet property="ballSqueakButton" destination="S6p-8h-G0H" id="1bo-h4-jrn"/>
+                        <outlet property="cameraView" destination="dWl-8W-ArJ" id="od0-Hc-VRH"/>
+                        <outlet property="cancelButton" destination="ddr-Bf-KYf" id="HDf-eF-FFB"/>
+                        <outlet property="changeCameraButton" destination="D16-m8-I46" id="I0J-Kk-Fzo"/>
+                        <outlet property="dog1barkButton" destination="UgN-Ld-I3S" id="8m3-I0-15a"/>
+                        <outlet property="dog2barkButton" destination="qvR-6q-QkE" id="5et-kk-oaf"/>
+                        <outlet property="dog3barkButton" destination="vxO-ri-o33" id="BJp-59-BaM"/>
+                        <outlet property="dog4barkButton" destination="W4e-XA-urm" id="Kp8-bg-cRQ"/>
+                        <outlet property="dog5barkButton" destination="ndl-hF-mpM" id="QRs-E0-cqS"/>
+                        <outlet property="dog6barkButton" destination="0S3-9M-xkw" id="iKU-lN-FRa"/>
+                        <outlet property="dogWhineButton" destination="43c-lH-AEg" id="nny-pv-Qil"/>
+                        <outlet property="doorBellButton" destination="KBy-oe-Qox" id="g9v-Bf-LUY"/>
+                        <outlet property="duckQuackButton" destination="3Zo-xx-3k1" id="Ndc-b7-jIU"/>
+                        <outlet property="flashButton" destination="xe2-kr-ehj" id="1El-i2-fRD"/>
+                        <outlet property="humanWhistleButton" destination="Ddr-tT-7QY" id="ChI-Cu-swt"/>
+                        <outlet property="imageThumbnailButton" destination="9MV-VT-5do" id="XH2-mM-Ybb"/>
+                        <outlet property="longSqueakToyButton" destination="SDj-dl-NHQ" id="CNv-mL-yR0"/>
+                        <outlet property="meowButton" destination="8dS-q5-n0p" id="ixH-hf-aIx"/>
+                        <outlet property="mouseSoundButton" destination="Vnb-nP-Bfd" id="MwU-7B-bFZ"/>
+                        <outlet property="packBarkingButton" destination="2kQ-ml-9rm" id="Nvd-Wm-a0C"/>
+                        <outlet property="photoView" destination="Zee-lV-0ke" id="vCk-xZ-Pgq"/>
+                        <outlet property="pikaButton" destination="r03-By-CRo" id="Lux-Pu-0jB"/>
+                        <outlet property="ratSoundButton" destination="qkn-z5-9SW" id="UOw-iJ-Hbm"/>
+                        <outlet property="scrollView" destination="SVI-ln-paZ" id="ehE-wi-Aqf"/>
+                        <outlet property="shortSqueakToyButton" destination="dEI-vR-T3Y" id="Wvq-i0-289"/>
+                        <outlet property="shutterButton" destination="cEr-4C-oJs" id="A3h-bs-1Rt"/>
+                        <outlet property="squirrelButton" destination="EiT-bF-OTW" id="hrN-Hw-LMH"/>
+                        <outlet property="toySqueakButton" destination="aoQ-9g-QFj" id="Vox-r1-aLY"/>
+                        <outlet property="wolfHowlButton" destination="UGD-I2-XOA" id="zvm-6c-VA8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Yf-tO-YaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1176" y="104.7976011994003"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="10Pug.png" width="300" height="300"/>
+        <image name="11TennisBall.png" width="300" height="300"/>
+        <image name="12Wolf.png" width="300" height="300"/>
+        <image name="13GSD.png" width="300" height="296"/>
+        <image name="14Toy3.png" width="300" height="300"/>
+        <image name="15Whistle.png" width="300" height="300"/>
+        <image name="16Rottie.png" width="300" height="300"/>
+        <image name="17Marmot.png" width="300" height="300"/>
+        <image name="18Rat.png" width="300" height="300"/>
+        <image name="19Yorkie.png" width="300" height="300"/>
+        <image name="1Dachshund.png" width="300" height="300"/>
+        <image name="20Dogs.png" width="300" height="300"/>
+        <image name="21Mouse.png" width="300" height="300"/>
+        <image name="2Doorbell.png" width="300" height="300"/>
+        <image name="3Duck.png" width="300" height="300"/>
+        <image name="4Golden.png" width="300" height="300"/>
+        <image name="5Toy1.png" width="300" height="300"/>
+        <image name="6Squirell.png" width="300" height="300"/>
+        <image name="7Scottie.png" width="300" height="300"/>
+        <image name="8Toy2.png" width="300" height="300"/>
+        <image name="9Cat.png" width="300" height="300"/>
+        <image name="cameraIcon.png" width="512" height="512"/>
+        <image name="cameraSwitch.png" width="512" height="512"/>
+        <image name="closeImage.png" width="720" height="720"/>
+        <image name="flashImage.png" width="512" height="512"/>
+        <image name="soundButton.png" width="720" height="720"/>
+        <image name="whiteRing.png" width="600" height="600"/>
+    </resources>
+</document>
